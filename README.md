@@ -25,6 +25,8 @@
 
 <br>
 
+---
+
 ## ⚡ What is this?
 
 This repository is a set of **custom Zeek detection scripts** built as part of my **NativeDefence** cybersecurity home lab. Each script hooks into Zeek's event engine to identify a specific attack pattern on the wire and writes structured JSON alerts, ready to be ingested by a SIEM (Wazuh) for centralized alerting and correlation.
