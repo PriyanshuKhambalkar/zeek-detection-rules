@@ -62,8 +62,7 @@ Every detector is self-contained in its own folder with its own script and docum
 | 🧠 Zeek version | `6.0.9` |
 | 💻 OS | Debian (`ndos`) |
 | 📄 Log format | JSON (`LogAscii::use_json = T`) |
-| 🎯 Target lab | DVWA VM, Windows workstation |
-| 🌐 Traffic source | Sophos SFOS firewall span/mirror |
+| 🎯 Target lab | Windows workstation |
 
 </div>
 
