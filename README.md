@@ -35,7 +35,7 @@ Every detector is self-contained in its own folder with its own script and docum
 
 ## 🎯 Detectors
 
-<div align="center">
+<div>
 
 | # | Detector | Detects | Log Output | Docs |
 |:---:|:---|:---|:---|:---:|
@@ -49,7 +49,7 @@ Every detector is self-contained in its own folder with its own script and docum
 
 ## 🖥️ Environment
 
-<div align="center">
+<div>
 
 | Component | Detail |
 |:---|:---|
