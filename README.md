@@ -1,6 +1,15 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,100:0D1117&height=160&section=header&text=ZEEK%20DETECTION%20SUITE&fontSize=42&fontColor=00F5D4&fontAlignY=55&desc=Custom%20Zeek%20Network%20Security%20Monitoring%20Scripts&descAlignY=80&descColor=8B949E&descSize=16" width="100%"/>
+```
+███████╗███████╗███████╗██╗  ██╗    ███████╗██╗   ██╗██╗████████╗███████╗
+╚══███╔╝██╔════╝██╔════╝██║ ██╔╝    ██╔════╝██║   ██║██║╚══██╔══╝██╔════╝
+  ███╔╝ █████╗  █████╗  █████╔╝     ███████╗██║   ██║██║   ██║   █████╗  
+ ███╔╝  ██╔══╝  ██╔══╝  ██╔═██╗     ╚════██║██║   ██║██║   ██║   ██╔══╝  
+███████╗███████╗███████╗██║  ██╗    ███████║╚██████╔╝██║   ██║   ███████╗
+╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝    ╚══════╝ ╚═════╝ ╚═╝   ╚═╝   ╚══════╝
+```
+
+### Custom Zeek Network Security Monitoring Scripts
 
 *A lightweight, rule-based Zeek detection suite — no third-party packages, no external dependencies, pure Zeek scripting.*
 
@@ -26,7 +35,7 @@ Every detector is self-contained in its own folder with its own script and docum
 
 ## 🎯 Detectors
 
-<div>
+<div align="center">
 
 | # | Detector | Detects | Log Output | Docs |
 |:---:|:---|:---|:---|:---:|
@@ -40,7 +49,7 @@ Every detector is self-contained in its own folder with its own script and docum
 
 ## 🖥️ Environment
 
-<div>
+<div align="center">
 
 | Component | Detail |
 |:---|:---|
@@ -98,6 +107,12 @@ zeekctl deploy
 > Built and tested on **Zeek 6.0.9**, where `SumStats` has compatibility issues — detectors here use manual table-based tracking instead.
 >
 > Each detector is independent — use one, two, or all three.
+
+<br>
+
+## 🧩 Part of NativeDefence
+
+This repo is one component of a larger structured home lab **(Zeek + Wazuh SIEM + Sophos firewall)** built as a cybersecurity portfolio project.
 
 <br>
 
