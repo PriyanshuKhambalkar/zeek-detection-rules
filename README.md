@@ -110,12 +110,6 @@ zeekctl deploy
 
 <br>
 
-## 🧩 Part of NativeDefence
-
-This repo is one component of a larger structured home lab **(Zeek + Wazuh SIEM + Sophos firewall)** built as a cybersecurity portfolio project.
-
-<br>
-
 ---
 
 ## 📜 License
