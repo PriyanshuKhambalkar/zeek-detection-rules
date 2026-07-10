@@ -33,6 +33,8 @@ Every detector is self-contained in its own folder with its own script and docum
 
 <br>
 
+---
+
 ## 🎯 Detectors
 
 <div>
@@ -46,6 +48,8 @@ Every detector is self-contained in its own folder with its own script and docum
 </div>
 
 <br>
+
+---
 
 ## 🖥️ Environment
 
@@ -62,6 +66,8 @@ Every detector is self-contained in its own folder with its own script and docum
 </div>
 
 <br>
+
+---
 
 ## 📁 Project Structure
 
@@ -82,6 +88,8 @@ zeek-detection-suite/
 
 <br>
 
+---
+
 ## ⚙️ Setup
 
 **1.** Copy the desired detector folder's `.zeek` file into your Zeek scripts directory.
@@ -101,6 +109,8 @@ zeekctl deploy
 **4.** Alerts land in `/var/log/zeek/current/` as JSON, ready for Wazuh ingestion via custom decoders/rules.
 
 <br>
+
+---
 
 ## 📝 Notes
 
