@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="919" height="196" alt="banner" src="https://github.com/user-attachments/assets/4531c7aa-7980-4621-b20f-d8e34c3e57c3" />
+<img width="700"  alt="banner" src="https://github.com/user-attachments/assets/4531c7aa-7980-4621-b20f-d8e34c3e57c3" />
 
 ### Custom Zeek Network Security Monitoring Scripts
 
