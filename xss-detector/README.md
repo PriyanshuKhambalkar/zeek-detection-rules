@@ -134,6 +134,6 @@ xss-detector/
 
 <div align="center">
 
-*Built with Zeek · SSH + HTTP · Manual State Tracking · No SumStats*
+*Built with Zeek · 40+ Signature Patterns · URI-Based Detection*
 
 </div>
