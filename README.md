@@ -23,9 +23,9 @@
 
 </div>
 
-<br>
-
 ---
+
+<br>
 
 ## ⚡ What is this?
 
@@ -62,7 +62,8 @@ Every detector is self-contained in its own folder with its own script and docum
 | 🧠 Zeek version | `6.0.9` |
 | 💻 OS | Debian (`ndos`) |
 | 📄 Log format | JSON (`LogAscii::use_json = T`) |
-| 🎯 Target lab | Windows workstation |
+| 🎯 Target lab | Local HTTP server, Windows workstation |
+| 🌐 Traffic source | Sophos SFOS firewall span/mirror |
 
 </div>
 
@@ -118,6 +119,14 @@ zeekctl deploy
 > Built and tested on **Zeek 6.0.9**, where `SumStats` has compatibility issues — detectors here use manual table-based tracking instead.
 >
 > Each detector is independent — use one, two, or all three.
+
+<br>
+
+---
+
+## 🧩 Part of NativeDefence
+
+This repo is one component of a larger structured home lab **(Zeek + Wazuh SIEM + Sophos firewall)** built as a cybersecurity portfolio project.
 
 <br>
 
