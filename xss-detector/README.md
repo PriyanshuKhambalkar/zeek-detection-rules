@@ -1,6 +1,7 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="XSS" width="320"/>
+<img width="320" alt="XSS" src="https://github.com/user-attachments/assets/b0449947-d9b2-4a9f-98e0-4efa9f3c68f5" />
+
 
 ### Zeek Rule-Based Cross-Site Scripting Detection
 
@@ -17,15 +18,19 @@
 
 <br>
 
+---
+
 ## ⚡ What is this?
 
 `xss-detect.zeek` hooks into Zeek's `http_request` event and checks the unescaped request URI against a large combined `pattern` covering tag-based, event-handler, JavaScript-sink, and encoded XSS payloads.
 
 <br>
 
+---
+
 ## 🎯 Detection Rule
 
-<div align="center">
+<div>
 
 | # | Rule | Trigger | Severity |
 |:---:|:---|:---|:---:|
@@ -47,11 +52,13 @@
 
 <br>
 
+---
+
 ## 📊 Log Output
 
 Alerts are written to **`xss_alerts.log`** (JSON). Fields:
 
-<div align="center">
+<div>
 
 | Field | Description |
 |:---|:---|
@@ -65,6 +72,8 @@ Alerts are written to **`xss_alerts.log`** (JSON). Fields:
 
 <br>
 
+---
+
 ## 🔔 Notice Type
 
 | Notice | Fires When |
@@ -72,6 +81,8 @@ Alerts are written to **`xss_alerts.log`** (JSON). Fields:
 | `XSS_Attempt` | Request URI matches any signature in `xss_patterns` |
 
 <br>
+
+---
 
 ## ⚙️ Setup
 
@@ -85,16 +96,19 @@ zeekctl deploy
 
 <br>
 
+---
+
 ## 📁 Structure
 
 ```
 xss-detector/
 ├── README.md
-├── assets/banner.png
 └── xss-detect.zeek
 ```
 
 <br>
+
+---
 
 ## 🖥️ Environment Tested
 
@@ -103,6 +117,8 @@ xss-detector/
 - JSON log output enabled (`LogAscii::use_json = T`)
 
 <br>
+
+---
 
 ## 📝 Notes
 
@@ -114,10 +130,10 @@ xss-detector/
 
 <br>
 
+---
+
 <div align="center">
 
-```
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-```
+*Built with Zeek · SSH + HTTP · Manual State Tracking · No SumStats*
 
 </div>
