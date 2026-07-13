@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="700" alt="BRUTEFORCE" src="https://github.com/user-attachments/assets/46cb8c61-c69d-4b0d-bd7e-056b1a5e7d0c" />
+<img width="700" alt="BRUTEFORCE" src="https://github.com/user-attachments/assets/039c8673-c304-4bc6-a24a-e9bac7ca377d" />
 
 ### Zeek Rule-Based Brute-Force Detection
 
@@ -15,6 +15,8 @@
 
 </div>
 
+---
+
 <br>
 
 ## ⚡ What is this?
@@ -24,6 +26,8 @@
 HTTP failures are detected two ways: an HTTP response code of `401`/`403`, or a configurable failure string matched inside the HTTP response body (for form-based logins that return `200` with an error message in the page).
 
 <br>
+
+---
 
 ## 🎯 Detection Rules
 
@@ -41,11 +45,13 @@ HTTP failures are detected two ways: an HTTP response code of `401`/`403`, or a 
 
 <br>
 
+---
+
 ## 📊 Log Output
 
 All events are written to `brute.log` (JSON). Every failed attempt is logged individually (with a running `total_attempts`); threshold-crossing, window-summary, and heuristic events add a `message`.
 
-<div align="center">
+<div>
 
 | Field | Description |
 |:---|:---|
@@ -57,6 +63,8 @@ All events are written to `brute.log` (JSON). Every failed attempt is logged ind
 | `message` | Human-readable note, present on alert-level events *(optional)* |
 
 </div>
+
+---
 
 **`service` values:**
 
@@ -71,6 +79,8 @@ All events are written to `brute.log` (JSON). Every failed attempt is logged ind
 
 <br>
 
+---
+
 ## 🔔 Notice Types
 
 | Notice | Fires When |
@@ -80,6 +90,8 @@ All events are written to `brute.log` (JSON). Every failed attempt is logged ind
 | `First_Contact_Success` | External source with no history succeeds SSH login on first contact |
 
 <br>
+
+---
 
 ## ⚙️ Setup
 
@@ -93,6 +105,8 @@ zeekctl deploy
 
 <br>
 
+---
+
 ## 📁 Structure
 
 ```
@@ -103,6 +117,8 @@ bruteforce-detector/
 
 <br>
 
+---
+
 ## 🖥️ Environment Tested
 
 - Zeek 6.0.9 on Debian
@@ -111,20 +127,22 @@ bruteforce-detector/
 
 <br>
 
+---
+
 ## 📝 Notes
 
 > `trusted_networks` defaults to `172.16.1.0/24` and `192.168.100.0/24` — update these to match your own lab/network before deploying.
 >
-> The HTTP form-failure string is configurable (`dvwa_fail_string`) — point it at whatever failure message your target application returns.
+> The HTTP form-failure match string is configurable at the top of the script — point it at whatever failure message your target application returns.
 >
 > Feeds into Wazuh via a custom decoder/rule for centralized alerting.
 
 <br>
 
+---
+
 <div align="center">
 
-```
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-```
+*Built with Zeek · SSH + HTTP · Manual State Tracking · No SumStats*
 
 </div>
