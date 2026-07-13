@@ -137,7 +137,7 @@ For commercial use or redistribution, please get in touch with the author.
 
 <div align="center">
 
-*Built with Python · No ML · No External Rule Files · Cross-Platform*
+*Built with Zeek · Pure Zeek Scripting · No Third-Party Packages · JSON Logging*
 
 ⭐ **Star this repo if you found it useful**
 
