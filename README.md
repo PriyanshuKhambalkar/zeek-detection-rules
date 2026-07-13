@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="700"  alt="banner" src="https://github.com/user-attachments/assets/4531c7aa-7980-4621-b20f-d8e34c3e57c3" />
+<img width="700" alt="ZEEK SUITE" src="https://github.com/user-attachments/assets/b0002c8e-2264-4989-ac80-906dda2c0ce6" />
 
 ### Custom Zeek Network Security Monitoring Scripts
 
@@ -16,9 +16,9 @@
 
 </div>
 
-<br>
-
 ---
+
+<br>
 
 ## ⚡ What is this?
 
@@ -36,9 +36,9 @@ Every detector is self-contained in its own folder with its own script and docum
 
 | # | Detector | Detects | Log Output | Docs |
 |:---:|:---|:---|:---|:---:|
-| 1 | 🔓 **Brute-Force** | Repeated failed auth attempts from a single source (SSH/HTTP) | `bruteforce.log` | [→ README](bruteforce-detector/README.md) |
-| 2 | 💉 **SQL Injection** | SQLi payloads in HTTP requests (URI/params) | `sqli.log` | [→ README](sqli-detector/README.md) |
-| 3 | 🕸️ **XSS** | Cross-site scripting payloads in HTTP requests | `xss.log` | [→ README](xss-detector/README.md) |
+| 1 | 🔓 **Brute-Force** | SSH/HTTP brute-force, post-guess success, first-contact success from untrusted sources | `brute.log` | [→ README](bruteforce-detector/README.md) |
+| 2 | 💉 **SQL Injection** | SQLi payloads in HTTP request URIs (13 signature categories) | `sqli-alert.log` | [→ README](sqli-detector/README.md) |
+| 3 | 🕸️ **XSS** | XSS payloads in HTTP request URIs (tags, event handlers, JS sinks, encoded variants) | `xss_alerts.log` | [→ README](xss-detector/README.md) |
 
 </div>
 
@@ -70,14 +70,18 @@ Every detector is self-contained in its own folder with its own script and docum
 zeek-detection-suite/
 ├── README.md
 ├── .gitignore
+├── assets/banner.png
 ├── bruteforce-detector/
 │   ├── README.md
+│   ├── assets/banner.png
 │   └── bruteforce-detect.zeek
 ├── sqli-detector/
 │   ├── README.md
-│   └── sqli-alert.zeek
+│   ├── assets/banner.png
+│   └── sqli-detect.zeek
 └── xss-detector/
     ├── README.md
+    ├── assets/banner.png
     └── xss-detect.zeek
 ```
 
@@ -92,7 +96,7 @@ zeek-detection-suite/
 **2.** Load it from `local.zeek`:
 ```zeek
 @load ./bruteforce-detect.zeek
-@load ./sqli-alert.zeek
+@load ./sqli-detect.zeek
 @load ./xss-detect.zeek
 ```
 
@@ -112,14 +116,6 @@ zeekctl deploy
 > Built and tested on **Zeek 6.0.9**, where `SumStats` has compatibility issues — detectors here use manual table-based tracking instead.
 >
 > Each detector is independent — use one, two, or all three.
-
-<br>
-
----
-
-## 🧩 Part of NativeDefence
-
-This repo is one component of a larger structured home lab **(Zeek + Wazuh SIEM + Sophos firewall)** built as a cybersecurity portfolio project.
 
 <br>
 
