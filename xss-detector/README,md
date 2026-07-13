@@ -1,0 +1,123 @@
+<div align="center">
+
+<img src="assets/banner.png" alt="XSS" width="320"/>
+
+### Zeek Rule-Based Cross-Site Scripting Detection
+
+*Inspects HTTP request URIs for a wide range of XSS payloads and encoded variants.*
+
+<br>
+
+![Zeek](https://img.shields.io/badge/ZEEK-6.0.9-00F5D4?style=for-the-badge&labelColor=0D1117)
+![Type](https://img.shields.io/badge/TYPE-PATTERN%20MATCHING-FF3864?style=for-the-badge&labelColor=0D1117)
+![Log](https://img.shields.io/badge/LOG-xss__alerts.log-FFD60A?style=for-the-badge&labelColor=0D1117)
+![Status](https://img.shields.io/badge/STATUS-WORKING-3FB950?style=for-the-badge&labelColor=0D1117)
+
+</div>
+
+<br>
+
+## ⚡ What is this?
+
+`xss-detect.zeek` hooks into Zeek's `http_request` event and checks the unescaped request URI against a large combined `pattern` covering tag-based, event-handler, JavaScript-sink, and encoded XSS payloads.
+
+<br>
+
+## 🎯 Detection Rule
+
+<div align="center">
+
+| # | Rule | Trigger | Severity |
+|:---:|:---|:---|:---:|
+| 1 | XSS Payload | HTTP request URI matches any XSS signature (see below) | 🟠 **HIGH** |
+
+</div>
+
+**Signatures covered** (all case-insensitive):
+
+| Category | Patterns |
+|:---|:---|
+| Script tags | <code>&lt;script</code>, <code>&lt;/script&gt;</code>, <code>&lt; script</code> |
+| Pseudo-protocols | `javascript:`, `vbscript:`, `data:text/html` |
+| Event handlers | `onerror=`, `onload=`, `onclick=`, `onmouseover=`, `onmouseout=`, `onfocus=`, `onkeyup=`, `onchange=`, `onsubmit=`, `onunload=`, `onbeforeunload=` |
+| Injectable tags | <code>&lt;img src&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;svg&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;applet&gt;</code>, <code>&lt;meta refresh&gt;</code>, <code>&lt;link href&gt;</code>, <code>&lt;style&gt;</code>, <code>&lt;form&gt;</code> |
+| JS sinks | `document.cookie`, `document.location`, `document.write`, `document.domain`, `window.location`, `innerHTML`, `outerHTML` |
+| JS functions | `alert(`, `prompt(`, `confirm(`, `eval(`, `expression(`, `String.fromCharCode` |
+| Encoded variants | `%3Cscript`, `&#`, `\x3c`, `\u003c` |
+
+<br>
+
+## 📊 Log Output
+
+Alerts are written to **`xss_alerts.log`** (JSON). Fields:
+
+<div align="center">
+
+| Field | Description |
+|:---|:---|
+| `ts` | Timestamp of the request |
+| `uid` | Zeek connection UID |
+| `id` | Full connection 4-tuple (`id.orig_h`, `id.orig_p`, `id.resp_h`, `id.resp_p`) |
+| `method` | HTTP method (GET, POST, etc.) |
+| `payload` | The unescaped URI containing the matched XSS pattern |
+
+</div>
+
+<br>
+
+## 🔔 Notice Type
+
+| Notice | Fires When |
+|:---|:---|
+| `XSS_Attempt` | Request URI matches any signature in `xss_patterns` |
+
+<br>
+
+## ⚙️ Setup
+
+```zeek
+@load ./xss-detect.zeek
+```
+
+```bash
+zeekctl deploy
+```
+
+<br>
+
+## 📁 Structure
+
+```
+xss-detector/
+├── README.md
+├── assets/banner.png
+└── xss-detect.zeek
+```
+
+<br>
+
+## 🖥️ Environment Tested
+
+- Zeek 6.0.9 on Debian
+- Tested against a local HTTP server serving crafted XSS request payloads
+- JSON log output enabled (`LogAscii::use_json = T`)
+
+<br>
+
+## 📝 Notes
+
+> Detection is URI-based only (GET/query-string parameters) — POST body payloads are not currently inspected.
+>
+> Signature set is defined as a single `pattern` constant (`xss_patterns`) and is extendable via `&redef`.
+>
+> Feeds into Wazuh via a custom decoder/rule for centralized alerting.
+
+<br>
+
+<div align="center">
+
+```
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+```
+
+</div>
